@@ -1,0 +1,72 @@
+#!/usr/bin/env python
+import random
+import os
+import sys
+
+update = (random.randint(-1,-1))
+upgrade = (random.randint(-2,-2))
+updateupgrade = (random.randint(-3,-3))
+git = (random.randint(-4,-4))
+git_run = (random.randint(-6,-6))
+run = (random.randint(-5,-5))
+help = (random.randint(-8,-8))
+break0 = (random.randint(-0,-0))
+
+print("For help type -8 at the end!")
+while True:
+        odg = input("Type command:")
+        try:
+            odg = int(odg)
+            if odg == update:
+                print("I start updating!")
+                print("Type password for update!")
+                os.system('sudo apt update')
+            if odg == upgrade:
+                print("I start upgrading!")
+                os.system('sudo apt upgrade')
+            if odg == updateupgrade:
+                print("I start updating and upgrading!")
+                os.system('sudo apt update')
+                os.system('sudo apt upgrade')
+            if odg == help:
+                print("I open the help!")
+                print("To update tipe -1.")
+                print("Type -2 for upgrade.")
+                print("Type -3 for update and upgrade.")
+                print("Type -4 for git repo download.")
+                print("Type -5 for for running .py file.")
+                print("Type -6 for running git-clone file.")
+                print("Need help? Type -8 for it!")
+                print("Type -0 for stop! Copyrighting by Julij Dominik Mrak.")
+            if odg == git:
+                print("I clone some folders and files from git repo...")
+                os.system('sudo apt update')
+                os.system('sudo apt install git')
+                os.system('git clone https://github.com/pro1mantis/UPapp/tree/main/git-clone')
+                print("Go to the git-clone folder. Open file named 'git-clone' and type to the 'os.system git clone' your repo! And run it! OK?")
+                break
+            if odg == run:
+                print("I can run python3 file but first I download some files from github repository.OK?")
+                os.system('sudo apt update')
+                os.system('sudo apt install git')
+                os.system('git clone https://github.com/pro1mantis/UPapp/tree/main/run')
+                print("Copy .py file to run/.Go to the git-clone folder. Open file named 'run' and type to the 'os.system python3' your python app! And run it! OK?")
+                break
+            if odg == git_run:
+                print("I will run git-clone file:")
+                os.system('sudo apt update')
+                os.system('sudo apt install git')
+                os.system('git clone https://github.com/pro1mantis/UPapp/blob/main/git_run.py')
+                os.system('cp -r /run.py /git-clone')
+                os.system('cd git-clone/')
+                os.system('python3 git_run.py')
+                os.system('cd ..')
+                print("OK, I done.")
+                break
+            if odg == break0:
+                print("OK I stop...")
+                sys.exit()
+                break
+        except ValueError:
+            print("That isn't a command!")
+
