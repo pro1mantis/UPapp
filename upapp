@@ -57,7 +57,7 @@ while True:
                 os.system('sudo apt update')
                 os.system('sudo apt install git')
                 os.system('git clone https://github.com/pro1mantis/UPapp/blob/main/git_run.py')
-                os.system('cp -r /run.py /git-clone')
+                os.system('cp -r /git_run.py /git-clone')
                 os.system('cd git-clone/')
                 os.system('python3 git_run.py')
                 os.system('cd ..')
